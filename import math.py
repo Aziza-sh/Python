@@ -1,20 +1,24 @@
 import math
-class vect:
-    def __init__(self, coords):
-        self.coords = coords 
-        self.dim = len(coords)
 
-        def __add__(self,other):
-            if insinstance(other, vect) and self.dim:
-                return vect(list(map(lambda x,y: x*y, self.coords, other.coords)))
-            else:
-                return vect([i*other for i in self.coords])
-        def __sub__(self, other):
-            pass
-        def __rmul__(self,other):
-            pass
-        def __str__(self, other):
-            pass
-        def norm(self):
-            return math.sqrt(self.self)
-print(vect)
+class c_n:
+    def __init__(self, re, im):
+        self.re = re
+        self.im = im
+    def to_polar(self):
+        m = math.hypot(self.re, self.im)
+
+        if self.re > 0 and self.im > 0:
+            a = math.atan(self.im/self.re) + math.pi
+        elif self.re < 0 and self.im > 0:
+            a = math.atan(self.im/self.re) - math.pi
+
+        return m, a
+    def __pow__(self, p):
+        m, a = self.to_polar()
+
+        return c_n(m**p*math.cos(p*a), m**p*math.sin(p*a))
+    
+    for i in range(n):
+        roots.apend(c_n(m*math.cos((a + 2*math.pi)/n)), m*math.sin((a + 2*math.pi)/n))
+        return roots
+    
